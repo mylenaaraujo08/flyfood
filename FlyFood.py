@@ -23,14 +23,12 @@ def ler_mapa(arquivo):
         pontos = [coordenadas[chave] for chave in coordenadas]
     return pontos, coordenadas, origem
 
-
 # chama a função que constrói as permutações
 def gerar_permutacao(pontos):
     trajetos = [None] * factorial(len(pontos))
     indice = [0]
     permutacao([], pontos, trajetos, indice)
     return trajetos
-
 
 # constrói as permutações e retorna uma lista com todos os caminhos
 def permutacao(permutacao_atual, pontos_restantes, trajetos, indice):
