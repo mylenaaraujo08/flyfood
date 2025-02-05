@@ -18,7 +18,9 @@ Os testes mostraram que o algoritmo encontra o menor trajeto possível, mas a ab
 # 📈 Resultados e Limitações
 
 O algoritmo atinge seu objetivo para pequenas instâncias
+
 O custo computacional cresce exponencialmente com o número de pontos
+
 Para grandes matrizes, o tempo de execução torna-se inviável
 
 # 🔍 Melhorias Futuras
