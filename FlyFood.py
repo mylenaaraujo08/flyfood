@@ -2,14 +2,12 @@ from math import factorial
 import time
 
 import os
-import itertools
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
-# Função para ler o mapa e processar as coordenadas
+
 def ler_mapa(arquivo):
     with open(arquivo, "r") as file:
-        linhas, colunas = map(int, file.readline().split())
         linhas = file.read().splitlines()
         coordenadas = {}
         origem = None
@@ -23,12 +21,14 @@ def ler_mapa(arquivo):
         pontos = [coordenadas[chave] for chave in coordenadas]
     return pontos, coordenadas, origem
 
+
 # chama a função que constrói as permutações
 def gerar_permutacao(pontos):
     trajetos = [None] * factorial(len(pontos))
     indice = [0]
     permutacao([], pontos, trajetos, indice)
     return trajetos
+
 
 # constrói as permutações e retorna uma lista com todos os caminhos
 def permutacao(permutacao_atual, pontos_restantes, trajetos, indice):
@@ -51,19 +51,17 @@ def permutacao(permutacao_atual, pontos_restantes, trajetos, indice):
 
 # calcula a distância de todos os caminhos construídos e retorna o menor entre eles
 def manhattan(lista_trajetos, origem):
-    menor_distancia = 100
+    menor_distancia = float('inf')
     menor_caminho = None
 
     for trajeto in lista_trajetos:
-        ultimo = len(trajeto)-1
-        distancia_total = abs(origem[0] - trajeto[0][0]) + abs(origem[1] - trajeto[0][1])
+        trajeto_completo = [origem] + trajeto + [origem]
+        distancia_total = 0
 
-        for indice in range(len(trajeto) - 1):
-            p1 = trajeto[indice]
-            p2 = trajeto[indice + 1]
+        for indice in range(len(trajeto_completo)-1):
+            p1 = trajeto_completo[indice]
+            p2 = trajeto_completo[indice + 1]
             distancia_total += abs(p1[0] - p2[0]) + abs(p1[1] - p2[1])
-
-        distancia_total += abs(trajeto[ultimo][0] - origem[0]) + abs(trajeto[ultimo][1] - origem[1])
 
         if distancia_total < menor_distancia:
             menor_distancia = distancia_total
@@ -71,18 +69,25 @@ def manhattan(lista_trajetos, origem):
     return menor_caminho, menor_distancia
 
 
-inicio = time.time()
-arquivo_mapa = 'Trajeto.txt'
-p, c, origem = ler_mapa(arquivo_mapa)
-trajetos_totais = gerar_permutacao(p)
-otimo, dronometro = manhattan(trajetos_totais, origem)
+def leitura(matriz):
+    inicio = time.time()
 
-# Substitui a chamada da função `converter`
-print(dronometro)
-caminho_otimo = ' '.join(
-    chave for coordenada in otimo for chave, valor in c.items() if valor == coordenada
-)
+    arquivo_mapa = matriz
+    p, c, origem = ler_mapa(arquivo_mapa)
+    trajetos_totais = gerar_permutacao(p)
+    otimo, dronometro = manhattan(trajetos_totais, origem)
 
-print(caminho_otimo)
-final = time.time()
-print(f'Tempo necessário: {final - inicio}')
+    # Substitui a chamada da função `converter`
+    print(dronometro)
+    caminho_otimo = ' '.join(
+        chave for coordenada in otimo for chave, valor in c.items() if valor == coordenada
+    )
+    print(caminho_otimo)
+    final = time.time()
+    return f'Tempo necessário: {final - inicio}'
+
+
+matrizes = ['m1', 'm2.txt', 'm3.txt', 'm4.txt']
+for i in range(len(matrizes)):
+    print(f'\nEntrada {i+1}:')
+    print(leitura(matrizes[i]))
