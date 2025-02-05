@@ -1,6 +1,6 @@
 # FORÇA BRUTA APLICADA AO PROBLEMA DE ROTEAMENTO DE ENTREGAS DO FLYFOOD
 
-#📌 Resumo
+# 📌 Resumo
 
 O FlyFood é um projeto que propõe uma solução para otimizar entregas via drones, minimizando a distância percorrida e economizando bateria. O objetivo é desenvolver um algoritmo capaz de encontrar a rota de menor custo para um drone percorrer todos os pontos de entrega e retornar à origem.
 
@@ -27,7 +27,7 @@ Para grandes matrizes, o tempo de execução torna-se inviável
 🔹 Uso de algoritmos genéticos ou métodos baseados no "vizinho mais próximo"
 🔹 Desenvolvimento de uma interface gráfica para visualização das rotas
 
-#👥 Colaboradores
+# 👥 Colaboradores
 
 Bruno dos Santos Rezende
 Bruno Mateus da Silva Santos
