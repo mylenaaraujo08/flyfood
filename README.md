@@ -30,9 +30,13 @@ Para grandes matrizes, o tempo de execução torna-se inviável
 # 👥 Colaboradores
 
 Bruno dos Santos Rezende
+
 Bruno Mateus da Silva Santos
+
 Gabriel Elias Alves Bezerra
+
 Ingrid Mylena de Oliveira Araújo
+
 Maria Clara Cavalcanti e Silva
 
 📍 Recife, Fevereiro de 2025
