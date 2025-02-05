@@ -11,8 +11,11 @@ Os testes mostraram que o algoritmo encontra o menor trajeto possível, mas a ab
 # 🚀 Principais Funcionalidades
 
 ✔️ Processamento de uma matriz que representa a cidade
+
 ✔️ Identificação dos pontos de entrega e do ponto de origem
+
 ✔️ Cálculo de todas as rotas possíveis usando permutação
+
 ✔️ Retorno da sequência ótima com menor distância percorrida
 
 # 📈 Resultados e Limitações
@@ -26,7 +29,9 @@ Para grandes matrizes, o tempo de execução torna-se inviável
 # 🔍 Melhorias Futuras
 
 🔹 Implementação de algoritmos mais eficientes, como heurísticas ou programação dinâmica
+
 🔹 Uso de algoritmos genéticos ou métodos baseados no "vizinho mais próximo"
+
 🔹 Desenvolvimento de uma interface gráfica para visualização das rotas
 
 # 👥 Colaboradores
