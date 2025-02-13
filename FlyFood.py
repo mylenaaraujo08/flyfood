@@ -87,7 +87,4 @@ def leitura(matriz):
     return f'Tempo necessário: {final - inicio}'
 
 
-matrizes = ['m1', 'm2.txt', 'm3.txt', 'm4.txt']
-for i in range(len(matrizes)):
-    print(f'\nEntrada {i+1}:')
-    print(leitura(matrizes[i]))
+print(leitura('Trajeto.txt'))
