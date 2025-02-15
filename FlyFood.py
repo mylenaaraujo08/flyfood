@@ -8,6 +8,7 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 def ler_mapa(arquivo):
     with open(arquivo, "r") as file:
+        linhas, colunas = map(int, file.readline().split())
         linhas = file.read().splitlines()
         coordenadas = {}
         origem = None
